@@ -1,18 +1,14 @@
 //TEST
 
-const palindromo = require('../utils/palindromo');
+const palindromo = require('../utils/palindromo.js');
 
 describe('palindromo', () => {
     test.each`
-      firstValue    | expectedResult    
-      ${hola}       | ${aloh}
-      ${soluciones} | ${senoiculos}
-      ${juan}       | ${nauj}
-      ${otto}       | ${otto}
-      ${oso}        | ${oso}
-      ${asa}        | ${asa}
+      string          | expectedResult   
+      ${'hola'}       | ${'aloh'}
+      ${'soluciones'} | ${'senoiculos'}
 
-    `('$firstValue should return $expectedResult', ({firstValue}) => {
-      expect(palindromo(firstValue)).toBe(expectedResult);
+    `('$string should return $expectedResult', ({string, expectedResult}) => {
+      expect(palindromo(string)).toBe(expectedResult);
     });
   });
